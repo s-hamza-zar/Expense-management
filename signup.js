@@ -1,6 +1,8 @@
 var email = document.querySelector("#emailId");
+var userName = document.querySelector("#userNameId");
 var password = document.querySelector("#passwordId");
 var confirmPassword = document.querySelector("#ConfirmPasswordId");
+
 var form = document.querySelector("#form");
 
 form.addEventListener("submit", handleSubmit);
@@ -50,12 +52,14 @@ function handleSubmit(event) {
   if (isValid()) {
     var newUser = {
       email: email.value,
-      password: password.value,
+      userName:userName.value,
+      password: password.value
+
     };
     var getData = JSON.parse(localStorage.getItem("data"));
 
     var isExits = getData.find(function (user) {
-      return user.email==email.value && user.password==password.value
+      return user.email==email.value && user.password==password.value && user.userName.value==userName.value
     });
 
     if(isExits){
@@ -67,6 +71,7 @@ function handleSubmit(event) {
     localStorage.setItem("data", JSON.stringify(getData));
 
     email.value = "";
+    userName.value="";
     password.value = "";
     confirmPassword.value = "";
   }

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expense Management System</title>
+</head>
+<link
+href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+rel="stylesheet"
+integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+crossorigin="anonymous"
+/>
+<link href="app.css" rel="stylesheet" />
+
+<body>
+    <div class="App-header">
+    <div>
+    <span></span>
+    <span><h2>Welcome To Expense Management System</h2></span>
+    </div>
+   </div>
+<div class="Btn-container">
+   <button type="button" class="btn btn-primary">Add Expense</button>
+   <button type="button" class="btn btn-secondary">Add Category</button>
+   <button type="button" class="btn btn-success">Report</button>
+</div>
+ <div class="container">
+<form class="navbar-form navbar-left" role="search">
+  <div class="form-group">
+     <input type="text" class="form-control" placeholder="Search">
+  </div>
+</form>
+</div>
+<div class="wrapper">
+<table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">Id</th>
+        <th scope="col">Description</th>
+        <th scope="col">Amount</th>
+        <th scope="col">Category</th>
+        <th scope="col">Created on</th>
+        <th scope="col">Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row">1</th>
+        <td>Food break</td>
+        <td>1000rs</td>
+        <td>food</td>
+        <td>Date</td>
+        <td>pata nai</td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
+
+
+<script
+src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+crossorigin="anonymous"></script>
+
+<script src="App.js"></script>
+</body>
+</html>
