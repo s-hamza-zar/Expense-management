@@ -2,7 +2,6 @@ var email = document.querySelector("#emailId");
 var userName = document.querySelector("#userNameId");
 var password = document.querySelector("#passwordId");
 var confirmPassword = document.querySelector("#ConfirmPasswordId");
-
 var form = document.querySelector("#form");
 
 form.addEventListener("submit", handleSubmit);
@@ -48,7 +47,7 @@ function isValid() {
 
 function handleSubmit(event) {
   event.preventDefault();
-
+   
   if (isValid()) {
     var newUser = {
       email: email.value,
@@ -66,13 +65,22 @@ function handleSubmit(event) {
         alert("User Already Exits Go to Login page")
         return;
     }
-
+    
     getData.push(newUser);
     localStorage.setItem("data", JSON.stringify(getData));
-
+    
     email.value = "";
     userName.value="";
     password.value = "";
     confirmPassword.value = "";
+    swal({
+      title: "Good job!",
+      text: "Clicked on ok to continue",
+      icon: "success",
+    })
+    .then((value) => {
+      location.assign("login.html");
+    });
   }
+  
 }

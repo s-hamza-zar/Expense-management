@@ -12,15 +12,16 @@
       integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
       crossorigin="anonymous"
     />
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
     <link href="login.css" rel="stylesheet" />
 
     <title>login</title>
   </head>
   <body>
-    <div class="mx-auto wrapper" style="width: 400px;">
+    <div class="mx-auto wrapper position-relative" style="width: 400px;">
     <h2 style="padding-bottom: 10px;">Login</h2>
-      <form id="form">
+      <form id="form" class="needs-validation" novalidate>
         <div class="mb-3">
           <label for="emailId" class="form-label">Email address</label>
           <input
@@ -28,7 +29,11 @@
             class="form-control"
             id="emailId"
             aria-describedby="emailHelp"
+            required
           />
+        </div>
+        <div class="valid-feedback">
+          Looks good!
         </div>
         <div class="mb-3">
           <label for="userNameId" class="form-label">User Name</label>
@@ -37,11 +42,18 @@
             class="form-control"
             id="userNameId"
             aria-describedby="userHelp"
+            required
           />
+        </div>
+        <div class="valid-feedback">
+          Looks good!
         </div>
         <div class="mb-3">
           <label for="passwordId" class="form-label">Password</label>
-          <input type="password" class="form-control" id="passwordId" />
+          <input type="password" class="form-control" id="passwordId" required/>
+        </div>
+        <div class="valid-feedback">
+          Looks good!
         </div>
         <div class="mb-3">
           <a href="./signup.html" class="link-primary">Don't have an account ? Sign Up</a>

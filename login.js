@@ -8,6 +8,10 @@ form.addEventListener("submit", loginHandle);
 
 function loginHandle(event) {
   event.preventDefault();
+  form.classList.add('was-validated')
+  if (!form.checkValidity())
+  return
+  
 
   var getData = JSON.parse(localStorage.getItem("data"));
   console.log(getData);
@@ -19,13 +23,19 @@ function loginHandle(event) {
     var userInfo = {
       email: email.value,
       userName:userName.value,
-      password: password.value
-  
-    };
-    localStorage.setItem("loginUser", JSON.stringify(userInfo));
-    location.assign("app.html");
-    return;
+      password: password.value};
+    localStorage.setItem("loginUser", JSON.stringify(userInfo))
+
+    swal({
+      title: "Good job!",
+      text: "You clicked the button!",
+      icon: "success",
+    })
+    .then((value) => {
+      location.assign("app.html");
+    });
+    return
   } else {
-    alert("user not Exits Go to signup page");
+    swal("Bad job!", "You clicked the button!", "error");
   }
 }
